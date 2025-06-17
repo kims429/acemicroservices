@@ -1,0 +1,985 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Header styling */
+.site-header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.site-header nav ul {
+  list-style: none;
+}
+
+.site-header nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.site-header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Main content section styling */
+.content-section {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.feature-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.feature-item h2 {
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Mobile first layout - Flexbox fallback */
+@media (max-width: 768px) {
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Fallback for CSS Grid support (for older browsers like IE) */
+@supports not (display: grid) {
+  .features {
+    display: flex;
+    justify-content: space-around;
+    gap: 1.5rem;
+  }
+
+  .feature-item {
+    width: 30%;
+  }
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #333;
+  color: #fff;
+}
+
+
+/* general css */
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+.inner_text {
+  font-size: 13px;
+  border-color: #014e56;
+}
+.inner_button {
+  border: 1px, #014e56;
+  background-color: white;
+}
+.transparent {
+  /* outline */
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: transparent;
+
+  /* fallback */
+  color: #09b097;
+
+  /* for demo purpose */
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 70px;
+  text-align: center;
+}
+
+.header_text,
+.header_text_solutions {
+  font-weight: 900;
+  font-size: 70px;
+}
+.header_text_about {
+  font-weight: 900;
+  font-size: 60px;
+}
+.header_text_approach {
+  font-weight: 900;
+  font-size: 50px;
+}
+
+.transparent_approach {
+  /* outline */
+  -webkit-text-stroke: 1px white;
+  -webkit-text-fill-color: transparent;
+
+  /* fallback */
+  color: #09b097;
+
+  /* for demo purpose */
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  text-align: center;
+}
+.transparent_about,
+.transparent_solutions {
+  /* outline */
+  -webkit-text-stroke: 1px #014e56;
+  -webkit-text-fill-color: transparent;
+
+  /* fallback */
+  color: #09b097;
+
+  /* for demo purpose */
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  text-align: center;
+}
+/* width */
+.width_100 {
+  width: 100%;
+}
+.width_90 {
+  width: 90%;
+}
+.width_80 {
+  width: 80%;
+}
+.width_70 {
+  width: 70%;
+}
+.width_60 {
+  width: 60%;
+}
+.width_50 {
+  width: 50%;
+}
+.width_40 {
+  width: 40%;
+}
+.width_20 {
+  width: 100%;
+}
+.width_20 {
+  width: 20%;
+}
+.width_10 {
+  width: 10%;
+}
+
+/* width */
+.height_100 {
+  height: 100vh;
+}
+.height_90 {
+  height: 90vh;
+}
+.height_80 {
+  height: 80vh;
+}
+.height_70 {
+  height: 70vh;
+}
+.height_60 {
+  height: 60vh;
+}
+.height_50 {
+  height: 50vh;
+}
+.height_40 {
+  height: 40vh;
+}
+.height_30 {
+  height: 30vh;
+}
+.height_20 {
+  height: 20vh;
+}
+.height_10 {
+  height: 10vh;
+}
+.font_size {
+  font-size: 7vh;
+}
+.main_color {
+  color: #09b097;
+}
+.main_color_bg {
+  background-color: #09b097;
+}
+.mid_color {
+  color: #014e56;
+}
+.mid_color_bg {
+  background-color: #014e56;
+}
+
+/* font family */
+
+/* header section styling */
+.header_section {
+  background: url("../assets/Mask\ Group\ 1.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 10%;
+  padding-right: 10%;
+}
+.header_section_solutions {
+  background: url("../assets/Mask\ Group\ 4.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 10%;
+  padding-right: 10%;
+}
+
+/* media query */
+@media screen and (max-width: 600px) {
+  .transparent {
+    /* outline */
+    -webkit-text-stroke: 1px white;
+    -webkit-text-fill-color: transparent;
+
+    /* fallback */
+    color: #09b097;
+
+    /* for demo purpose */
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 50px;
+    text-align: center;
+  }
+  .header_text {
+    font-weight: 900;
+    font-size: 50px;
+  }
+}
+.our_approach {
+  margin-top: 200px;
+  background: url("../assets/Group\ 2589.png");
+  background-position: center;
+  background-size: cover;
+}
+/* our solutions */
+.our_solutions {
+  background: url("../assets/Group\ 2610.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.card {
+  width: 80%;
+  height: 22rem;
+  margin: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  color: white;
+  border: none;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.4);
+
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity 0.2s ease-out;
+  }
+
+  h2 {
+    font-size: 17px;
+    font-weight: bolder;
+    position: absolute;
+    inset: auto auto 250px 30px;
+
+    margin: 0;
+    transition: inset 0.3s 0.3s ease-out;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  p,
+  a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity 0.3s ease-out;
+    font-size: 62px;
+  }
+
+  p {
+    inset: auto auto 80px 30px;
+  }
+
+  a {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &:hover h2 {
+    inset: auto auto 290px 30px;
+    transition: inset 0.3s ease-out;
+  }
+
+  &:hover p,
+  &:hover a {
+    opacity: 1;
+    transition: opacity 0.5s 0.1s ease-in;
+  }
+
+  &:hover img {
+    transition: opacity 0.3s ease-in;
+    opacity: 1;
+  }
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+/* our products */
+.our_products {
+  background: #383737;
+}
+.products_pic {
+  background: url("../assets/Group\ 2610.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.footer {
+  background: #222222;
+}
+ul {
+  list-style-type: none;
+  color: white;
+  font-size: 12px;
+}
+ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  color: white;
+}
+.nav-main .col-md-10 ul {
+  list-style-type: none;
+  color: rgb(37, 36, 36);
+  font-size: 12px;
+}
+.nav-main .col-md-10 ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(37, 36, 36);
+}
+.nav-main .col-md-2 .cont a i {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(37, 36, 36);
+}
+
+/* about page */
+.about_header {
+  background: #101010;
+}
+
+.about_list li:before {
+  content: "\2022";
+  color: #09b097;
+  font-size: 1.5em;
+  left: 0;
+}
+.about_right {
+  background: url("../assets/about\ us.png");
+  background-position: center;
+  background-size: cover;
+}
+.header-text {
+  font-size: 50px;
+  font-weight: bold;
+}
+.header-text-min {
+  text-align: center;
+}
+.solutions_short_links {
+  margin-top: -100px;
+}
+.card:hover {
+  margin-top: -30px;
+  transition-duration: 0.5s;
+}
+.card-text {
+  text-align: center;
+  font-weight: bold;
+}
+.cloud-left {
+  background: url("../assets/Rectangle\ -3.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.data-left {
+  background: url("../assets/Networking@2x-1.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.manage-left {
+  background: url("../assets/Rectangle\ -1.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.auto-left {
+  background: url("../assets/Rectangle\ -2.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.bg-light-custom {
+  background-color: whitesmoke;
+}
+
+.cloud_strategies1 {
+  margin-top: 100px;
+}
+.cloud_right_header {
+  font-weight: bold;
+  color: rgb(77, 75, 75);
+}
+.cloud_right_text {
+  font-size: 12px;
+}
+.btn_cloud {
+  border: 1px solid #014e56;
+  background-color: white;
+  color: #014e56;
+  font-weight: bold;
+  font-size: 13 spx;
+  cursor: pointer;
+}
+.btn_cloud:hover {
+  border: 1px solid #014e56;
+  background-color: #014e56;
+  color: white;
+  font-weight: bold;
+  font-size: 13 spx;
+  cursor: pointer;
+}
+.cloud_header {
+  background: url("../assets/Mask\ Group\ 2.png");
+  background-size: cover;
+  background-position: center;
+}
+.clients_header {
+  background: url("../assets/Mask\ Group\ 4.png");
+  background-size: cover;
+  background-position: center;
+}
+.crum {
+  background: #222222;
+}
+.inner_list_ul {
+  list-style-type: disc;
+}
+.dash_list {
+  list-style-type: var(-);
+}
+.size_12 {
+  font-size: 12px;
+}
+.main_btn {
+  background-image: linear-gradient(to right, #014e56 51%, #09b097 100%);
+}
+.video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+.contact_header_left {
+  background: url("../assets/Rectangle\ 41.png");
+  background-position: center;
+  background-size: cover;
+}
+.text-orientation-upright {
+  writing-mode: vertical-lr;
+  font-weight: bold;
+}
+.solution_text {
+  font-size: 12px;
+}
+.main_nav_li:hover {
+  color: #09b097;
+}
+.policy_nav_li:hover {
+  color: #09b097;
+}
+.policy_nav_li {
+  color: black;
+  /* padding-left: 30px; */
+}
+/* index products section */
+
+.inner-cont1 {
+  background: url("../assets/Rectangle\ 50.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.inner-cont2 {
+  background: url("../assets/Path\ 198.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.inner-cont3 {
+  background: url("../assets/Path\ 199.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.inner-cont4 {
+  background: url("../assets/Path\ 200.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+.info {
+  width: 100%;
+  height: 100%;
+}
+.info:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+.hover-text {
+  font-size: 14px;
+}
+.products-img {
+  transition: 0.5s ease;
+}
+.products-img:hover {
+  cursor: pointer;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+  transition: 1s ease;
+}
+/* dropdown styling */
+/* Add this CSS to your stylesheet or in a style tag in the head section */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  min-width: 300px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  font-weight: 100;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/* privacy policy page */
+.policy_head_inner {
+  background: rgba(0, 0, 0, 0.4);
+}
+.policy_head {
+  background: url("../assets/MicrosoftTeams-image\ \(6\).png");
+}
+/* clients page styling */
+.client-tab-item:hover {
+  background: #09b097;
+  color: white;
+}
+.client-tab-item {
+  color: black;
+  margin: 10px;
+}
+.nav-link.active {
+  background: #09b097;
+  color: white;
+}
+/* Default styles for larger screens */
+
+.nav-minor {
+  display: none;
+}
+/* Responsive styles for tablets (portrait and landscape) */
+@media only screen and (max-width: 980px) {
+  .display_null {
+    display: none;
+  }
+  .nav-main {
+    display: none;
+  }
+  .nav-minor {
+    display: block;
+  }
+  .header_text,
+  .header_text_solutions,
+  .transparent {
+    font-weight: 900;
+    font-size: 50px;
+  }
+  .header_section {
+    height: fit-content;
+  }
+  .about_us {
+    height: fit-content;
+    margin-bottom: -20%;
+  }
+  .content {
+    width: 100%;
+  }
+  .our_approach,
+  .about_us,
+  .our_products,
+  .products_pic,
+  .footer,
+  .contact-content {
+    height: fit-content;
+  }
+  .inner_our_approach,
+  .inner_our_solutions {
+    width: 100%;
+  }
+
+  .inner_our_solutions {
+    text-align: center;
+  }
+  .our-solutions-card-item {
+    margin: 30px;
+  }
+  .solutions-row {
+    width: 80%;
+  }
+  .solutions_short_links {
+    height: 300vh;
+    margin-top: 10vh;
+  }
+  .contact_header_left {
+    height: 40vh;
+  }
+  /* Add any additional responsive styles as needed */
+}
+
+/* Responsive styles for mobile devices */
+@media only screen and (max-width: 480px) {
+  .nav-main {
+    display: none;
+  }
+  .header_text,
+  .header_text_solutions {
+    font-weight: 900;
+    font-size: 50px;
+  }
+  /* Add specific styles for mobile devices */
+}
+
+#menu__toggle {
+  opacity: 0;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+  left: 0 !important;
+}
+.menu__btn {
+  position: fixed;
+  top: 10%;
+  left: 20%;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  z-index: 1;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+
+  background-color: rgb(229, 226, 226);
+  transition-duration: 0.25s;
+}
+.menu__btn.scrolled > span,
+.menu__btn.scrolled > span::before,
+.menu__btn.scrolled > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: #09b097;
+  transition-duration: 0.25s;
+}
+
+.menu__btn > span::before {
+  content: "";
+  top: -8px;
+}
+.menu__btn > span::after {
+  content: "";
+  top: 8px;
+}
+.menu__box {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  transition-duration: 0.25s;
+}
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+.menu__item:hover {
+  background-color: #cfd8dc;
+  color: #09b097;
+}
+
+/* Basic image display and responsiveness */
+.products-img img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  object-fit: contain; /* Maintains aspect ratio */
+}
+
+/* Ensure images are visible and properly sized */
+.popup-trigger,
+.popup-trigger1,
+.popup-trigger2,
+.popup-trigger3 {
+  width: 100% !important;
+  height: auto;
+  max-height: 200px; /* Adjust as needed */
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effects for product images */
+.popup-trigger:hover,
+.popup-trigger1:hover,
+.popup-trigger2:hover,
+.popup-trigger3:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Container styling for product images */
+.products-img {
+  position: relative;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  margin-bottom: 20px;
+}
+
+/* Text orientation styling */
+.text-orientation-upright {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px 10px;
+  border-radius: 15px;
+  white-space: nowrap;
+}
+
+/* Modal image styling */
+.modal-body img {
+  width: 80%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Fallback for missing images */
+.products-img img[src=""],
+.products-img img:not([src]),
+.products-img img[src="#"] {
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+}
+
+.products-img img[src=""]:after,
+.products-img img:not([src]):after,
+.products-img img[src="#"]:after {
+  content: "Image not found";
+  color: #999;
+  font-size: 14px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .products-img {
+      margin-bottom: 30px;
+  }
+  
+  .popup-trigger,
+  .popup-trigger1,
+  .popup-trigger2,
+  .popup-trigger3 {
+      max-height: 150px;
+  }
+  
+  .text-orientation-upright {
+      font-size: 12px;
+      padding: 3px 8px;
+  }
+}
+
+/* Loading state for images */
+.products-img img {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.products-img img.loaded {
+  opacity: 1;
+}
+
+/* Alternative: CSS background images approach */
+.product-card-bg1 {
+  background-image: url('assets/Group 2590.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 200px;
+  width: 100%;
+}
+
+.product-card-bg2 {
+  background-image: url('assets/Group 2591.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 200px;
+  width: 100%;
+}
+
+.product-card-bg3 {
+  background-image: url('assets/Group 2592.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 200px;
+  width: 100%;
+}
+
+.product-card-bg4 {
+  background-image: url('assets/Group 2593.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 200px;
+  width: 100%;
+}

@@ -1,0 +1,324 @@
+* {
+
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* Vendor prefixes for animations */
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@-moz-keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Cross-browser fade-in class */
+.fade-in {
+  -webkit-animation: fadeIn 0.6s ease-out;
+  -moz-animation: fadeIn 0.6s ease-out;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Enhanced cross-browser button styles for your existing buttons */
+.btn, .btn_cloud {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  
+  /* Enhanced for Ace Micro Services theme */
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover, .btn_cloud:hover {
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  
+  -webkit-box-shadow: 0 4px 15px rgba(0, 128, 128, 0.3);
+  -moz-box-shadow: 0 4px 15px rgba(0, 128, 128, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 128, 128, 0.3);
+}
+
+/* Cross-browser grid support with flexbox fallback */
+@supports not (display: grid) {
+  .solutions-row {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -moz-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  }
+  
+  .our-solutions-card-item {
+      -webkit-flex: 1 1 250px;
+      -moz-flex: 1 1 250px;
+      -ms-flex: 1 1 250px;
+      flex: 1 1 250px;
+  }
+}
+
+/* Enhanced modal animations with cross-browser support */
+.modal-reveal {
+  -webkit-animation: modalReveal 0.5s ease-in-out;
+  -moz-animation: modalReveal 0.5s ease-in-out;
+  animation: modalReveal 0.5s ease-in-out;
+}
+
+@-webkit-keyframes modalReveal {
+  from {
+      -webkit-transform: scale(0.8);
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  to {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@-moz-keyframes modalReveal {
+  from {
+      -moz-transform: scale(0.8);
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  to {
+      -moz-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes modalReveal {
+  from {
+      transform: scale(0.8);
+      opacity: 0;
+  }
+  to {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+/* Cross-browser social media icons enhancement */
+.social-icon {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+.social-icon:hover {
+  -webkit-transform: scale(1.1) translateZ(0);
+  -moz-transform: scale(1.1) translateZ(0);
+  -ms-transform: scale(1.1) translateZ(0);
+  transform: scale(1.1) translateZ(0);
+}
+
+/* Cross-browser progress bar for browser detection demo */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 20px 0;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(45deg, #008080, #20b2aa);
+  background: -webkit-linear-gradient(45deg, #008080, #20b2aa);
+  background: -moz-linear-gradient(45deg, #008080, #20b2aa);
+  width: 0%;
+  border-radius: 4px;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: 
+      -webkit-linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent);
+  background-image: 
+      -moz-linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent);
+  background-image: 
+      linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.2) 75%, transparent 75%, transparent);
+  background-size: 30px 30px;
+  -webkit-animation: progressMove 1s linear infinite;
+  -moz-animation: progressMove 1s linear infinite;
+  animation: progressMove 1s linear infinite;
+}
+
+@-webkit-keyframes progressMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 30px 30px; }
+}
+
+@-moz-keyframes progressMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 30px 30px; }
+}
+
+@keyframes progressMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 30px 30px; }
+}
+
+.ie-fix {
+  zoom: 1; /* This works in IE6-IE11 */
+}
+
+
+/* Firefox specific fixes */
+@-moz-document url-prefix() {
+  .card {
+      -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Safari specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .webkit-fix {
+      -webkit-appearance: none;
+      -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* Cross-browser form styling */
+input, select, textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-transition: border-color 0.3s ease;
+  -moz-transition: border-color 0.3s ease;
+  -o-transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #008080;
+  -webkit-box-shadow: 0 0 0 2px rgba(0, 128, 128, 0.2);
+  -moz-box-shadow: 0 0 0 2px rgba(0, 128, 128, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 128, 128, 0.2);
+}
+
+/* Cross-browser text selection */
+::selection {
+  background-color: #008080;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #008080;
+  color: white;
+}
+
+/* Cross-browser scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #008080;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #006666;
+}
+
+/* Browser detection info box */
+.browser-info-box {
+  background: linear-gradient(135deg, #008080, #20b2aa);
+  background: -webkit-linear-gradient(135deg, #008080, #20b2aa);
+  background: -moz-linear-gradient(135deg, #008080, #20b2aa);
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  -webkit-box-shadow: 0 4px 15px rgba(0, 128, 128, 0.2);
+  -moz-box-shadow: 0 4px 15px rgba(0, 128, 128, 0.2);
+  box-shadow: 0 4px 15px rgba(0, 128, 128, 0.2);
+}
+
+/* Responsive design with cross-browser support */
+@media screen and (max-width: 768px) {
+  .fade-in {
+      -webkit-animation-duration: 0.4s;
+      -moz-animation-duration: 0.4s;
+      animation-duration: 0.4s;
+  }
+  
+  .progress-container {
+      height: 6px;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .btn, .btn_cloud {
+      border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+      -webkit-animation-duration: 0.01ms !important;
+      -moz-animation-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      -webkit-animation-iteration-count: 1 !important;
+      -moz-animation-iteration-count: 1 !important;
+      animation-iteration-count: 1 !important;
+      -webkit-transition-duration: 0.01ms !important;
+      -moz-transition-duration: 0.01ms !important;
+      -o-transition-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+  }
+}
