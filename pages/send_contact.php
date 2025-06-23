@@ -1,207 +1,183 @@
 <?php
-// send_contact.php
-session_start();
-
 // Configuration
-$to_email = "your-email@example.com"; // Change this to your email
-$smtp_host = "smtp.gmail.com"; // Change based on your email provider
-$smtp_port = 587;
-$smtp_username = "your-email@gmail.com"; // Your SMTP username
-$smtp_password = "your-app-password"; // Your SMTP password or app password
+$recaptcha_secret_key = 'YOUR_RECAPTCHA_SECRET_KEY'; // Replace with your actual secret key
+$to_email = 'your-email@example.com'; // Replace with your email address
+$from_email = 'noreply@yourdomain.com'; // Replace with your domain email
 
-// Function to sanitize input
-function sanitize_input($data)
+// Function to verify reCAPTCHA
+function verifyRecaptcha($secret_key, $response)
 {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
+  $url = 'https://www.google.com/recaptcha/api/siteverify';
+
+  $data = array(
+    'secret' => $secret_key,
+    'response' => $response,
+    'remoteip' => $_SERVER['REMOTE_ADDR']
+  );
+
+  $options = array(
+    'http' => array(
+      'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+      'method' => 'POST',
+      'content' => http_build_query($data)
+    )
+  );
+
+  $context = stream_context_create($options);
+  $result = file_get_contents($url, false, $context);
+
+  if ($result === FALSE) {
+    return false;
+  }
+
+  $json = json_decode($result, true);
+  return $json['success'];
 }
 
-// Function to validate email
-function validate_email($email)
-{
-  return filter_var($email, FILTER_VALIDATE_EMAIL);
-}
-
-// Check if form was submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $errors = [];
-
-  // Get and sanitize form data
-  $name = isset($_POST['name']) ? sanitize_input($_POST['name']) : '';
-  $email = isset($_POST['email']) ? sanitize_input($_POST['email']) : '';
-  $subject = isset($_POST['subject']) ? sanitize_input($_POST['subject']) : 'Contact Form Submission';
-  $message = isset($_POST['message']) ? sanitize_input($_POST['message']) : '';
-
-  // Validation
-  if (empty($name)) {
-    $errors[] = "Name is required";
-  }
-
-  if (empty($email)) {
-    $errors[] = "Email is required";
-  } elseif (!validate_email($email)) {
-    $errors[] = "Invalid email format";
-  }
-
-  if (empty($message)) {
-    $errors[] = "Message is required";
-  }
-
-  // If no errors, proceed to send email
-  if (empty($errors)) {
-    // Method 1: Using PHP's mail() function (simple but may not work on all servers)
-    $success = send_email_simple($to_email, $name, $email, $subject, $message);
-
-    // Method 2: Using PHPMailer (recommended for production)
-    // Uncomment the line below and comment the line above if you want to use PHPMailer
-    // $success = send_email_smtp($to_email, $name, $email, $subject, $message, $smtp_host, $smtp_port, $smtp_username, $smtp_password);
-
-    if ($success) {
-      // Redirect with success message
-      header("Location: contact.php?status=success");
-      exit();
-    } else {
-      // Redirect with error message
-      header("Location: contact.php?status=error");
-      exit();
-    }
-  } else {
-    // Redirect with error message
-    header("Location: contact.php?status=error&errors=" . urlencode(implode(", ", $errors)));
-    exit();
-  }
-} else {
-  // If accessed directly, redirect to contact form
-  header("Location: contact.php");
-  exit();
-}
-
-// Simple email function using PHP's mail()
-function send_email_simple($to_email, $name, $from_email, $subject, $message)
+// Function to send email
+function sendEmail($to, $from, $name, $email, $subject, $message)
 {
   $headers = "MIME-Version: 1.0" . "\r\n";
   $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-  $headers .= "From: " . $name . " <" . $from_email . ">" . "\r\n";
-  $headers .= "Reply-To: " . $from_email . "\r\n";
+  $headers .= "From: " . $from . "\r\n";
+  $headers .= "Reply-To: " . $email . "\r\n";
 
-  $email_subject = "Contact Form: " . $subject;
+  $email_subject = !empty($subject) ? $subject : "New Contact Form Message";
+
   $email_body = "
     <html>
     <head>
-        <title>New Contact Form Submission</title>
+        <title>New Contact Form Message</title>
+        <style>
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+            .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+            .header { background: #004D4A; color: white; padding: 20px; text-align: center; }
+            .content { padding: 20px; background: #f9f9f9; }
+            .field { margin-bottom: 15px; }
+            .label { font-weight: bold; color: #004D4A; }
+        </style>
     </head>
     <body>
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> " . htmlspecialchars($name) . "</p>
-        <p><strong>Email:</strong> " . htmlspecialchars($from_email) . "</p>
-        <p><strong>Subject:</strong> " . htmlspecialchars($subject) . "</p>
-        <p><strong>Message:</strong></p>
-        <p>" . nl2br(htmlspecialchars($message)) . "</p>
-        <hr>
-        <p><small>This email was sent from your website contact form.</small></p>
+        <div class='container'>
+            <div class='header'>
+                <h2>New Contact Form Message</h2>
+            </div>
+            <div class='content'>
+                <div class='field'>
+                    <div class='label'>Name:</div>
+                    <div>" . htmlspecialchars($name) . "</div>
+                </div>
+                <div class='field'>
+                    <div class='label'>Email:</div>
+                    <div>" . htmlspecialchars($email) . "</div>
+                </div>
+                <div class='field'>
+                    <div class='label'>Subject:</div>
+                    <div>" . htmlspecialchars($email_subject) . "</div>
+                </div>
+                <div class='field'>
+                    <div class='label'>Message:</div>
+                    <div>" . nl2br(htmlspecialchars($message)) . "</div>
+                </div>
+                <div class='field'>
+                    <div class='label'>Date:</div>
+                    <div>" . date('Y-m-d H:i:s') . "</div>
+                </div>
+                <div class='field'>
+                    <div class='label'>IP Address:</div>
+                    <div>" . $_SERVER['REMOTE_ADDR'] . "</div>
+                </div>
+            </div>
+        </div>
     </body>
-    </html>
-    ";
+    </html>";
 
-  return mail($to_email, $email_subject, $email_body, $headers);
+  return mail($to, $email_subject, $email_body, $headers);
 }
 
-// Advanced email function using SMTP (requires PHPMailer)
-function send_email_smtp($to_email, $name, $from_email, $subject, $message, $smtp_host, $smtp_port, $smtp_username, $smtp_password)
-{
-  // This function requires PHPMailer library
-  // Install via Composer: composer require phpmailer/phpmailer
+// Check if form was submitted
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  /*
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\Exception;
-    
-    require 'vendor/autoload.php';
-    
-    $mail = new PHPMailer(true);
-    
-    try {
-        // Server settings
-        $mail->isSMTP();
-        $mail->Host       = $smtp_host;
-        $mail->SMTPAuth   = true;
-        $mail->Username   = $smtp_username;
-        $mail->Password   = $smtp_password;
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = $smtp_port;
-        
-        // Recipients
-        $mail->setFrom($smtp_username, 'Website Contact Form');
-        $mail->addAddress($to_email);
-        $mail->addReplyTo($from_email, $name);
-        
-        // Content
-        $mail->isHTML(true);
-        $mail->Subject = 'Contact Form: ' . $subject;
-        $mail->Body    = "
-        <html>
-        <head>
-            <title>New Contact Form Submission</title>
-        </head>
-        <body>
-            <h2>New Contact Form Submission</h2>
-            <p><strong>Name:</strong> " . htmlspecialchars($name) . "</p>
-            <p><strong>Email:</strong> " . htmlspecialchars($from_email) . "</p>
-            <p><strong>Subject:</strong> " . htmlspecialchars($subject) . "</p>
-            <p><strong>Message:</strong></p>
-            <p>" . nl2br(htmlspecialchars($message)) . "</p>
-            <hr>
-            <p><small>This email was sent from your website contact form.</small></p>
-        </body>
-        </html>
-        ";
-        
-        $mail->send();
-        return true;
-    } catch (Exception $e) {
-        error_log("Message could not be sent. Mailer Error: {$mail->ErrorInfo}");
-        return false;
-    }
-    */
+  // Get form data
+  $name = isset($_POST['name']) ? trim($_POST['name']) : '';
+  $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+  $subject = isset($_POST['subject']) ? trim($_POST['subject']) : '';
+  $message = isset($_POST['message']) ? trim($_POST['message']) : '';
+  $recaptcha_response = isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response'] : '';
 
-  // Placeholder return for demonstration
-  return false;
-}
-
-// Optional: Save to database
-function save_to_database($name, $email, $subject, $message)
-{
-  // Database configuration
-  $servername = "localhost";
-  $username = "your_db_username";
-  $password = "your_db_password";
-  $dbname = "your_database_name";
-
-  try {
-    $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $stmt = $pdo->prepare("INSERT INTO contact_messages (name, email, subject, message, created_at) VALUES (?, ?, ?, ?, NOW())");
-    $stmt->execute([$name, $email, $subject, $message]);
-
-    return true;
-  } catch (PDOException $e) {
-    error_log("Database Error: " . $e->getMessage());
-    return false;
+  // Validate required fields
+  if (empty($name) || empty($email) || empty($message)) {
+    header('Location: ' . $_SERVER['HTTP_REFERER'] . '?status=error');
+    exit();
   }
+
+  // Validate email format
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    header('Location: ' . $_SERVER['HTTP_REFERER'] . '?status=error');
+    exit();
+  }
+
+  // Verify reCAPTCHA
+  if (empty($recaptcha_response)) {
+    header('Location: ' . $_SERVER['HTTP_REFERER'] . '?status=error');
+    exit();
+  }
+
+  if (!verifyRecaptcha($recaptcha_secret_key, $recaptcha_response)) {
+    header('Location: ' . $_SERVER['HTTP_REFERER'] . '?status=recaptcha_error');
+    exit();
+  }
+
+  // Additional security measures
+  // Check for spam keywords (optional)
+  $spam_keywords = array('viagra', 'cialis', 'casino', 'poker', 'loan', 'mortgage');
+  $content_check = strtolower($name . ' ' . $email . ' ' . $subject . ' ' . $message);
+
+  foreach ($spam_keywords as $keyword) {
+    if (strpos($content_check, $keyword) !== false) {
+      header('Location: ' . $_SERVER['HTTP_REFERER'] . '?status=error');
+      exit();
+    }
+  }
+
+  // Rate limiting - check if same IP sent message recently (optional)
+  $rate_limit_file = 'rate_limit.txt';
+  $current_time = time();
+  $ip = $_SERVER['REMOTE_ADDR'];
+  $rate_limit_duration = 300; // 5 minutes
+
+  if (file_exists($rate_limit_file)) {
+    $rate_data = file_get_contents($rate_limit_file);
+    $rate_entries = explode("\n", trim($rate_data));
+
+    foreach ($rate_entries as $entry) {
+      if (empty($entry)) continue;
+      list($stored_ip, $timestamp) = explode('|', $entry);
+
+      if ($stored_ip == $ip && ($current_time - $timestamp) < $rate_limit_duration) {
+        header('Location: ' . $_SERVER['HTTP_REFERER'] . '?status=error');
+        exit();
+      }
+    }
+  }
+
+  // Send email
+  if (sendEmail($to_email, $from_email, $name, $email, $subject, $message)) {
+    // Log successful submission for rate limiting
+    $log_entry = $ip . '|' . $current_time . "\n";
+    file_put_contents($rate_limit_file, $log_entry, FILE_APPEND | LOCK_EX);
+
+    // Optional: Log to file for record keeping
+    $log_message = date('Y-m-d H:i:s') . " - Contact form submission from: " . $name . " (" . $email . ")\n";
+    file_put_contents('contact_log.txt', $log_message, FILE_APPEND | LOCK_EX);
+
+    header('Location: ' . $_SERVER['HTTP_REFERER'] . '?status=success');
+  } else {
+    header('Location: ' . $_SERVER['HTTP_REFERER'] . '?status=error');
+  }
+} else {
+  // If accessed directly, redirect back
+  header('Location: contact.php');
 }
 
-// Optional: Create the database table (run this once)
-/*
-CREATE TABLE contact_messages (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    subject VARCHAR(200),
-    message TEXT NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-*/
+exit();

@@ -4,6 +4,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
   <style>
+    .footer {
+      margin-left: calc(-50vw + 50%) !important;
+      width: 100vw !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+    }
+
     .social-media-container {
       position: relative;
       margin: 20px auto;
@@ -121,6 +128,7 @@
     }
   </style>
 
+
   <div class="row">
     <div class="col-sm-4 d-flex">
       <ul>
@@ -186,40 +194,9 @@
       </ul>
     </div>
   </div>
+  <script src="js/bootstrap_js/bootstrap.min.js"></script>
+  <script src="js/bootstrap_js/bootstrap.js"></script>
+  <script src="js/bootstrap_js/bootstrap.bundle.min.js"></script>
+  </body>
 
-  <!-- Styled Social Media Icons Container -->
-  <div class="social-media-container">
-    <a href="https://linkedin.com/company/ace-micro-services" target="_blank" class="social-icon linkedin">
-      <i class="fab fa-linkedin-in"></i>
-      <span class="social-tooltip">Let's talk on LinkedIn</span>
-    </a>
-    <a href="https://twitter.com/ace_microservices" target="_blank" class="social-icon twitter">
-      <i class="fab fa-twitter"></i>
-      <span class="social-tooltip">Follow us on Twitter</span>
-    </a>
-    <a href="https://github.com/ace-microservices" target="_blank" class="social-icon github">
-      <i class="fab fa-github"></i>
-      <span class="social-tooltip">Check our GitHub</span>
-    </a>
-    <a href="https://facebook.com/acemicroservices" target="_blank" class="social-icon facebook">
-      <i class="fab fa-facebook-f"></i>
-      <span class="social-tooltip">Like us on Facebook</span>
-    </a>
-    <a href="https://wa.me/254713797915" target="_blank" class="social-icon whatsapp">
-      <i class="fab fa-whatsapp"></i>
-      <span class="social-tooltip">Chat on WhatsApp</span>
-    </a>
-  </div>
-
-</div>
-<!-- !footer section -->
-<script>
-  document.getElementById('currentYear').textContent = new Date().getFullYear()
-</script>
-<!-- js linking -->
-<script src="js/bootstrap_js/bootstrap.min.js"></script>
-<script src="js/bootstrap_js/bootstrap.js"></script>
-<script src="js/bootstrap_js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+  </html>

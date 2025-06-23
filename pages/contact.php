@@ -8,44 +8,169 @@
       <div class="d-flex font-weight-center align-items-center">
         <div class="cont1 width_100">
 
-          <div class="header_text_about text-center font_size">
-            Our<span class="transparent_about font_size"> Location</span>
-          </div>
-          <div class="d-flex justify-content-center align-items-center py-5"> <img src="../assets/location.png" alt=""></div>
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-          <h6 class="text-center fw-bold mid_color">Head Main Office</h6>
-          <p class="text-center mt-5 text-secondary">Rainbow Towers,
-            <br />Muthithi Road, Nairobi<br />P.O.Box 66778-00800 Nairobi,Kenya
-            <br />Tel: +254713797915 / +254733601627
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+          <h1 class="section-title">
+            <i class=" fas fa-paper-plane me-3"></i>
+            Get In Touch
+          </h1>
+          <p class="section-subtitle">
+            We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
-          <br /><br />
+
+          <div class="col-lg-8">
+            <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
+              <div class="alert alert-custom alert-success-custom">
+                <i class="fas fa-check-circle me-2"></i>
+                Your message has been sent successfully! We'll get back to you soon.
+              </div>
+            <?php elseif (isset($_GET['status']) && $_GET['status'] === 'error'): ?>
+              <div class="alert alert-custom alert-danger-custom">
+                <i class="fas fa-robot me-2"></i>
+                Please verify that you are not a robot.
+              </div>
+            <?php elseif (isset($_GET['status']) && $_GET['status'] === 'recaptcha_error'): ?>
+              <div class="alert alert-custom alert-danger-custom">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                reCAPTCHA verification failed. Please try again.
+              </div>
+            <?php endif; ?>
+
+            <style>
+              /* Teal background for form inputs */
+              form.needs-validation .form-control {
+                background-color: #1A8A94;
+                /* Deep teal */
+                color: white;
+              }
+
+              form.needs-validation .form-control:focus {
+                background-color: black;
+                color: white;
+              }
+
+              form.needs-validation label {
+                color: white;
+              }
+
+              .g-recaptcha {
+                margin: 20px 0;
+              }
+            </style>
+
+            <form action="send_contact.php" method="POST" class="needs-validation" novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                    <label for="name">Full Name <span class="required-asterisk">*</span></label>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="email" name="email" class="form-control" id="email" placeholder="your@email.com" required>
+                    <label for="email">Email Address <span class="required-asterisk">*</span></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-floating">
+                <input type="text" name="subject" class="form-control" id="subject" placeholder="Message Subject">
+                <label for="subject">Subject</label>
+              </div>
+
+              <div class="form-floating">
+                <textarea name="message" class="form-control" id="message" placeholder="Your message here..." style="height: 150px;" required></textarea>
+                <label for="message">Message <span class="required-asterisk">*</span></label>
+              </div>
+              <div class="mb-3">
+                <div class="g-recaptcha" data-sitekey="6LfUw2krAAAAAOTM7g47eGSMutOIDjgI_MPldqb2"></div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="btn btn-send">
+                  <i class="fas fa-paper-plane me-2"></i>
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-
       </div>
     </div>
-
   </div>
-  <div class="row contact-content ">
+</div>
 
-    <div class="col-sm-12 mb-5">
-      <div class="header_text_about font_size text-center m-5">
-        Find<span class="transparent_about font_size"> Us Here</span>
-      </div>
-      <br />
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.2651462711637!2d36.805897514757334!3d-1.2662052989661857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f173e4f773017%3A0x6ea952c2753d2498!2sRainbow%20Tower!5e0!3m2!1sen!2sus!4v1671220374408!5m2!1sen!2sus" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="width_100 height_60"></iframe>
+</div>
+</div>
+</div>
 
+</div>
+
+<!-- Start of form container -->
+<div class="col-lg-8 mb-5 pb-5">
+  <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
+    <!-- ... alerts ... -->
+  <?php endif; ?>
+
+  <form action="send_contact.php" method="POST" class="needs-validation" novalidate>
+
+</div>
+</form>
+
+<!-- ✅ Boosted spacing below the form -->
+<div style="margin-bottom: 120px;"></div>
+
+</div> <!-- end col-lg-8 -->
+<!-- Find Us + Map section -->
+<div class="row contact-content mt-5"> <!-- Adds spacing before this section -->
+  <div class="col-sm-12 text-center p-0">
+    <!-- Add spacing between contact form and map section -->
+    <!-- Add spacing below the previous section -->
+    <div class="section-spacer"></div>
+
+    <!-- Heading -->
+    <div class="header_text_about font_size mb-4 text-center">
+      Find<span class="transparent_about font_size"> Us Here</span>
     </div>
-  </div>
-  <!DOCTYPE html>
-  <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get In Touch - Contact Us</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Map (touching heading directly) -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.2651462711637!2d36.805897514757334!3d-1.2662052989661857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f173e4f773017%3A0x6ea952c2753d2498!2sRainbow%20Tower!5e0!3m2!1sen!2sus!4v1671220374408!5m2!1sen!2sus" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="width_100 height_60"></iframe>
+   
+    </iframe>
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+
     <style>
+      .section-spacer {
+        height: 80px;
+        /* Space between form and heading */
+      }
+
+      .header_text_about {
+        margin-top: 0;
+        margin-bottom: 20px;
+        /* Ensures space between heading and map */
+        padding: 0 15px;
+      }
+
+      /* Optional: Improve heading on small screens */
+      @media (max-width: 768px) {
+        .header_text_about {
+          font-size: 1.5rem;
+          line-height: 1.2;
+        }
+      }
+
+      /* Map height if not already defined */
+      .height_60 {
+        height: 400px;
+        /* or use vh units like 60vh */
+      }
+
       :root {
         --ace-teal: #004D4A;
         /* Deep Teal */
@@ -228,18 +353,10 @@
       }
 
       .btn-send {
-        background: var(--secondary-gradient);
-        border: none;
-        border-radius: 50px;
-        padding: 1rem 3rem;
-        font-size: 1.1rem;
-        font-weight: 600;
+        background-color: teal;
         color: white;
-        transition: all 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        position: relative;
-        overflow: hidden;
       }
+
 
       .btn-send:hover {
         transform: translateY(-3px);
@@ -362,132 +479,27 @@
         color: red;
         margin-left: 2px;
       }
+
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: black;
+        animation: ripple-animation 1s ease-out;
+        pointer-events: none;
+      }
+
+      @keyframes ripple-animation {
+        0% {
+          transform: scale(0);
+          opacity: 1;
+        }
+
+        100% {
+          transform: scale(1);
+          opacity: 0;
+        }
+      }
     </style>
-  </head>
-
-  <body>
-    <div class="floating-icons">
-      <i class="fas fa-envelope floating-icon"></i>
-      <i class="fas fa-phone floating-icon"></i>
-      <i class="fas fa-map-marker-alt floating-icon"></i>
-    </div>
-
-    <div class="container main-container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 col-xl-8">
-          <div class="contact-card">
-            <h1 class="section-title">
-              <i class="fas fa-paper-plane me-3"></i>
-              Get In Touch
-            </h1>
-            <p class="section-subtitle">
-              We'd love to hear from you. Send us a message and we'll respond as soon as possible.
-            </p>
-
-            <div class="row">
-              <div class="col-lg-4">
-                <div class="contact-info">
-                  <h4 class="text-white mb-4" style="color: black !important;">
-                    <i class="fas fa-info-circle me-2"></i>
-                    Contact Information
-                  </h4>
-
-                  <div class="contact-info-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                      <strong>Email</strong><br>
-                      <small>info@dataposit.co.ke</small>
-                    </div>
-                  </div>
-
-                  <div class="contact-info-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                      <strong>Phone</strong><br>
-                      <small>+254713797915</small>
-                    </div>
-                  </div>
-
-                  <div class="contact-info-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                      <strong>Address</strong><br>
-                      <small>P.O.Box 66778-00800 Nairobi,Kenya </small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-lg-8">
-                <?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
-                  <div class="alert alert-custom alert-success-custom">
-                    <i class="fas fa-check-circle me-2"></i>
-                    Your message has been sent successfully! We'll get back to you soon.
-                  </div>
-                <?php elseif (isset($_GET['status']) && $_GET['status'] === 'error'): ?>
-                  <div class="alert alert-custom alert-danger-custom">
-                    <i class="fas fa-exclamation-triangle me-2"></i>
-                    There was an error sending your message. Please try again.
-                  </div>
-                <?php endif; ?>
-                <style>
-                  /* Teal background for form inputs */
-                  form.needs-validation .form-control {
-                    background-color: #1A8A94;
-
-                    /* Deep teal */
-                    color: white;
-                  }
-
-                  form.needs-validation .form-control:focus {
-                    background-color: black;
-                    color: white;
-                  }
-
-                  form.needs-validation label {
-                    color: white;
-                  }
-                </style>
-
-                <form action="send_contact.php" method="POST" class="needs-validation" novalidate>
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-floating">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                        <label for="name">Full Name <span class="required-asterisk"></span></label>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-floating">
-                        <input type="email" name="email" class="form-control" id="email" placeholder="your@email.com" required>
-                        <label for="email">Email Address <span class="required-asterisk"></span></label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-floating">
-                    <input type="text" name="subject" class="form-control" id="subject" placeholder="Message Subject">
-                    <label for="subject">Subject</label>
-                  </div>
-
-                  <div class="form-floating">
-                    <textarea name="message" class="form-control" id="message" placeholder="Your message here..." style="height: 150px;" required></textarea>
-                    <label for="message">Message <span class="required-asterisk"></span></label>
-                  </div>
-
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-send">
-                      <i class="fas fa-paper-plane me-2"></i>
-                      Send Message
-                    </button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -536,28 +548,7 @@
       });
     </script>
 
-    <style>
-      .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: black;
-        animation: ripple-animation 1s ease-out;
-        pointer-events: none;
-      }
+    </body>
+    <?php include_once "../partials/footer_minor.php" ?>
 
-      @keyframes ripple-animation {
-        0% {
-          transform: scale(0);
-          opacity: 1;
-        }
-
-        100% {
-          transform: scale(1);
-          opacity: 0;
-        }
-      }
-    </style>
-  </body>
-  <?php include_once "../partials/footer_minor.php" ?>
-
-  </html>
+    </html>

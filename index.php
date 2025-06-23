@@ -1,5 +1,4 @@
 <?php include_once "partials/header_main.php" ?>
-</style>
 
 <link rel="stylesheet" href="assets/cross-browser-styles.css">
 
@@ -12,7 +11,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: row;
+    align-items: stretch;
     justify-content: center;
     min-height: 250px;
   }
@@ -90,32 +89,16 @@
     /* Light grey glow on hover */
   }
 
-  /* Style to prevent overflow */
   .modal {
-    overflow: hidden;
+    z-index: 1050;
   }
 
-
-  /* Style to prevent overflow */
-
-
-  /* Initial styles for the modal */
-  .modal {
-    overflow: hidden;
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-
+  .modal-dialog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  /* Styles for the reveal effect */
-  .modal-reveal {
-    animation: reveal 0.5s ease-in-out;
-  }
 
   @keyframes reveal {
     from {
@@ -137,23 +120,10 @@
 
 
 
-  .social-icon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-  }
+
 
   .social-icon::before {
+
     content: '';
     position: absolute;
     top: 0;
@@ -168,30 +138,7 @@
     left: 100%;
   }
 
-  .social-icon:hover {
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-  }
 
-  .linkedin {
-    background: linear-gradient(45deg, #0077b5, #00a0dc);
-  }
-
-  .twitter {
-    background: linear-gradient(45deg, #1da1f2, #0d8bd9);
-  }
-
-  .github {
-    background: linear-gradient(45deg, #333, #24292e);
-  }
-
-  .facebook {
-    background: linear-gradient(45deg, #1877f2, #42a5f5);
-  }
-
-  .whatsapp {
-    background: linear-gradient(45deg, #25d366, #128c7e);
-  }
 
   .social-tooltip {
     position: absolute;
@@ -448,9 +395,7 @@
     </div>
 
     <ol style="list-style-type: upper-roman;">
-      <li>A purchase of IT hardware from Ace Micro Services is a purchase of peace of mind. We offer warranty and fix it if it breaks.</li>
-      <li>Professional-grade hardware for business reliability.</li>
-      <li>Scalable solutions from individual users to enterprise deployments.</li>
+      A purchase of IT hardware from Ace Micro Services is a purchase of peace of mind. We offer warranty and fix it if it breaks.Professional-grade hardware for business reliability.Scalable solutions from individual users to enterprise deployments.</li>
     </ol>
   </div>
 </div>
@@ -705,7 +650,5 @@
       window.location.href = 'pages/home_automation.php';
     }
   </script>
-
-  <script src="assets/cross-browser-scripts.js"></script>
 
   <?php include_once "partials/footer.php" ?>

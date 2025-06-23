@@ -38,6 +38,7 @@
   <div class="nav-minor row  text-light pb-2  ">
 
     <div class="col-md-12">
+      
       <div class="hamburger-menu ">
         <input id="menu__toggle" type="checkbox" />
         <label class="menu__btn " for="menu__toggle">

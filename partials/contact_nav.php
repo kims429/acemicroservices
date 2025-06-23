@@ -34,8 +34,7 @@
   <!-- ! navigation bar -->
 
   <!-- minor navigation bar -->
-  <div class="nav-minor row  text-light pb-2 ">
-
+  <!-- <div class="nav-minor row  text-light pb-2 ">
     <div class="col-md-10">
       <div class="hamburger-menu">
         <input id="menu__toggle" type="checkbox" />
@@ -59,7 +58,7 @@
 
 
 
-  </div>
+  </div> -->
   <script>
     function openSolutions() {
       window.location.href = 'solutions.php';

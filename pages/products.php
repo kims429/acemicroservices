@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/custom.css" />
   <style>
     * {
+      
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -182,7 +183,7 @@
       color: #333;
       margin-bottom: 20px;
       background: linear-gradient(teal, teal, teal);
-      -webkit-background-clip: text;
+      -webkit-background-clip : text;
       -webkit-text-fill-color: transparent;
     }
 
@@ -278,9 +279,7 @@
       </div>
       <div class="product-features">
         <ol style="list-style-type: upper-roman;">
-          <li>A purchase of IT hardware from Ace Micro Services is a purchase of peace of mind. We offer warranty and fix it if it breaks.</li>
-          <li>Professional-grade hardware for business reliability.</li>
-          <li>Scalable solutions from individual users to enterprise deployments.</li>
+          A purchase of IT hardware from Ace Micro Services is a purchase of peace of mind. We offer warranty and fix it if it breaks.Professional-grade hardware for business reliability.Scalable solutions from individual users to enterprise deployments.</li>
         </ol>
       </div>
     </div>
