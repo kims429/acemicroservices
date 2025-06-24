@@ -9,10 +9,7 @@
         <div class="cont1 width_100">
 
           <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-          <h1 class="section-title">
+     <h1 class="section-title">
             <i class=" fas fa-paper-plane me-3"></i>
             Get In Touch
           </h1>
@@ -101,12 +98,12 @@
     </div>
   </div>
 </div>
-
 </div>
 </div>
 </div>
 
 </div>
+
 
 <!-- Start of form container -->
 <div class="col-lg-8 mb-5 pb-5">
