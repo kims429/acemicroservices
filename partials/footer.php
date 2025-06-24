@@ -5,10 +5,10 @@
 
   <style>
     .footer {
-      margin-left: calc(-50vw + 50%) !important;
-      width: 100vw !important;
-      padding-left: 20px !important;
-      padding-right: 20px !important;
+      margin-left: calc(-50vw + 50%);
+      width: 100vw;
+      padding-left: 20px;
+      padding-right: 20px;
     }
 
     .social-media-container {
