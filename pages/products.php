@@ -183,7 +183,7 @@
       color: #333;
       margin-bottom: 20px;
       background: linear-gradient(teal, teal, teal);
-      -webkit-background-clip : text;
+      background-clip : text;
       -webkit-text-fill-color: transparent;
     }
 

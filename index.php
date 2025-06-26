@@ -131,6 +131,7 @@
   .social-icon:hover::before {
     left: 100%;
   }
+
   .social-tooltip {
     position: absolute;
     top: 100%;
@@ -211,104 +212,88 @@
 
   /* Make the row take full width */
   .about_us .row {
-    margin: 0 !important;
-    width: 100% !important;
-    max-width: none !important;
+    margin: 0;
+    width: 100%;
+    max-width: none;
   }
 
   /* Ensure columns take full width without gaps - reduced padding for thinner section */
   .about_us .col-md-6 {
-    padding: 2rem !important;
-    margin: 0 !important;
-    max-width: 50% !important;
-    flex: 0 0 50% !important;
-    min-height: auto !important;
+    padding: 2rem;
+    margin: 0;
+    max-width: 50%;
+    flex: 0 0 50%;
+    min-height: auto;
   }
 
 
   /* Ensure image takes full width of its container with controlled height */
   .about_us img {
-    width: 100% !important;
-    height: 250px !important;
-    object-fit: cover !important;
-    border-radius: 8px !important;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
   }
 
   /* Make sure the background extends fully */
   .about_us .bg-light {
-    background-color: #f8f9fa !important;
+    background-color: #f8f9fa;
   }
 
   /* Remove any Bootstrap container constraints */
   body .container,
   body .container-fluid {
-    max-width: none !important;
-    padding: 0 !important;
+    max-width: none;
+    padding: 0;
   }
 
   /* Additional styles for compact design */
   .about_us .header_text_about {
-    font-size: 2.5rem !important;
-    margin-bottom: 1rem !important;
-    line-height: 1.2 !important;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
   }
 
   .about_us .inner_text {
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-    margin-top: 1rem !important;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 1rem;
   }
 
   /* Remove any height constraints from your HTML classes */
   .about_us.inch-14-height,
   .about_us.height_40 {
-    height: auto !important;
-    min-height: auto !important;
+    height: auto;
+    min-height: auto;
   }
 
   /* Reduce space between sections */
   .about_us {
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
   }
 
   .our_approach {
-    margin-top: 0 !important;
-    padding-top: 2rem !important;
+    margin-top: 0;
+    padding-top: 2rem;
   }
 
   /* Responsive adjustments for mobile */
   @media (max-width: 768px) {
     .about_us .col-md-6 {
-      padding: 1.5rem !important;
-      max-width: 100% !important;
-      flex: 0 0 100% !important;
+      padding: 1.5rem;
+      max-width: 100%;
+      flex: 0 0 100%;
     }
 
     .about_us img {
-      height: 200px !important;
+      height: 200px;
     }
 
     .about_us .header_text_about {
-      font-size: 2rem !important;
+      font-size: 2rem;
     }
   }
 
-
-  /* Remove padding and margins from parent containers */
-  .about_us {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100vw !important;
-    position: relative !important;
-    left: 50% !important;
-    right: 50% !important;
-    margin-left: -50vw !important;
-    margin-right: -50vw !important;
-    min-height: auto !important;
-    height: auto !important;
-  }
-
-  /* Ensure the inner container takes full width with reduced height */
   .inner_about_cont {
     margin: 0 !important;
     padding: 2rem 0 !important;
@@ -363,82 +348,75 @@
 
   /* Ensure equal height columns */
   .about_us .row {
-    display: flex !important;
-    align-items: stretch !important;
+    display: flex;
+    align-items: stretch;
   }
 
   .about_us .col-md-6 {
-    display: flex !important;
-    flex-direction: column !important;
+    display: flex;
+    flex-direction: column;
   }
 
   /* Make sure the background extends fully */
   .about_us .bg-light {
-    background-color: #f8f9fa !important;
+    background-color: #f8f9fa;
   }
 
   /* Remove any Bootstrap container constraints */
   body .container,
   body .container-fluid {
-    max-width: none !important;
-    padding: 0 !important;
+    max-width: none;
+    padding: 0;
   }
 
   /* Additional styles for compact design */
   .about_us .header_text_about {
-    font-size: 2.5rem !important;
-    margin-bottom: 1rem !important;
-    line-height: 1.2 !important;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
   }
 
   .about_us .inner_text {
-    font-size: 1rem !important;
-    line-height: 1.6 !important;
-    margin-top: 1rem !important;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-top: 1rem;
   }
 
   /* Remove any height constraints from your HTML classes */
   .about_us.inch-14-height,
   .about_us.height_40 {
-    height: auto !important;
-    min-height: auto !important;
+    height: auto;
+    min-height: auto;
   }
 
   /* Reduce space between sections */
   .about_us {
-    margin-bottom: 0 !important;
+    margin-bottom: 0;
   }
 
   .our_approach {
-    margin-top: 0 !important;
-    padding-top: 2rem !important;
+    margin-top: 0;
+    padding-top: 2rem;
   }
 
   /* Responsive adjustments for mobile */
   @media (max-width: 768px) {
     .about_us .col-md-6 {
-      padding: 1.5rem !important;
-      max-width: 100% !important;
-      flex: 0 0 100% !important;
+      padding: 1.5rem;
+      max-width: 100%;
+      flex: 0 0 100%;
     }
 
     .about_us img {
-      height: 200px !important;
+      height: 200px;
     }
 
     .about_us .header_text_about {
-      font-size: 2rem !important;
+      font-size: 2rem;
     }
   }
 
-
-
-
-  /* ===== HERO SECTION MODERN STYLING ===== */
-
-  /* CSS Custom Properties for Hero Section */
   :root {
-    /* Hero Color Palette */
     --hero-primary: #40E0D0;
     --hero-secondary: #00CED1;
     --hero-accent: #48D1CC;
@@ -784,11 +762,11 @@
     .hero-subtitle,
     .hero-description,
     .hero-description::before {
-      animation: none !important;
+      animation: none;
     }
 
     .hero-description:hover {
-      transform: none !important;
+      transform: none;
     }
   }
 
@@ -845,8 +823,6 @@
       opacity: 0.5;
     }
   }
-  
-  
 </style>
 
 <!-- Social Media Icons Container -->
@@ -858,7 +834,7 @@
   <?php include_once "partials/nav.php" ?>
   <div class="content width_70 pt-5">
     <div class="header_text main_color inch-14-head-text">
-      Achieve your goals<span class="transparent inch-14-head-text"></span>
+      Achieve your<span class="transparent inch-14-head-text"> goals</span>
     </div>
     <div class="h4 text-light pb-5 inch-14-margin">
       with our reliable and scalable end-to-end IT solutions
@@ -884,7 +860,7 @@
       </div>
       <div class="col-md-5 bg-light p-5">
         <div class="header_text_about">
-          Who we are<span class="transparent_about"></span>
+          <span class="transparent_about"> Who we are</span>
         </div>
         <div class="inner_text mid_color pt-5">
           At Ace Micro Services, we provide customized IT solutions to help
@@ -907,7 +883,7 @@
 <div class="our_approach height_50 bg-dark width_100 p-5">
   <div class="cont inner_our_approach width_50">
     <div class="header_text_approach text-light">
-      Our Approach<span class="transparent_approach"></span>
+      Our <span class="transparent_approach">Approach</span>
     </div>
 
     <div class="p text-light pb-4">
@@ -927,7 +903,7 @@
 <div class="our_solutions width_100 p-5">
   <div class="cont width_50 inner_our_solutions  pb-2">
     <div class="header_text_solutions mid_color">
-      Our Solutions<span class="transparent_solutions"></span>
+      Our <span class="transparent_solutions">Solutions</span>
     </div>
 
     <div class="p">
@@ -1020,7 +996,7 @@
 <div class="our_products width_100 height_50 p-5" id="our_products">
   <div class="cont width_50 pb-2">
     <div class="header_text">
-      Our Products<span class="transparent"></span>
+      Our <span class="transparent">Products</span>
     </div>
 
     <ol style="list-style-type: upper-roman;">
@@ -1064,7 +1040,7 @@
               <div class="row ">
                 <!-- Left column for image -->
                 <div class="col-md-6 d-flex justify-content-center align-items-center pt-5">
-                  <img src="assets/Group 2590.png" class="width_80" alt="">
+                  <img src="assets/Group 2590.png" class="width_80">
                 </div>
 
                 <!-- Right column for horizontal text -->
