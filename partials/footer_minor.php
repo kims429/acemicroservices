@@ -1,5 +1,5 @@
 <!-- footer section -->
-<div class="footer width_100 height_49 p-5">
+<div class="footer width_100 height_50px">
   <!-- Font Awesome CDN for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 

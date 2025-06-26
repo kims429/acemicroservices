@@ -116,12 +116,6 @@
     visibility: hidden;
   }
 
-  /* Social Media Icons Styles */
-
-
-
-
-
   .social-icon::before {
 
     content: '';
@@ -137,9 +131,6 @@
   .social-icon:hover::before {
     left: 100%;
   }
-
-
-
   .social-tooltip {
     position: absolute;
     top: 100%;
@@ -217,12 +208,648 @@
       height: 50vh;
     }
   }
+
+  /* Make the row take full width */
+  .about_us .row {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Ensure columns take full width without gaps - reduced padding for thinner section */
+  .about_us .col-md-6 {
+    padding: 2rem !important;
+    margin: 0 !important;
+    max-width: 50% !important;
+    flex: 0 0 50% !important;
+    min-height: auto !important;
+  }
+
+
+  /* Ensure image takes full width of its container with controlled height */
+  .about_us img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+  }
+
+  /* Make sure the background extends fully */
+  .about_us .bg-light {
+    background-color: #f8f9fa !important;
+  }
+
+  /* Remove any Bootstrap container constraints */
+  body .container,
+  body .container-fluid {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* Additional styles for compact design */
+  .about_us .header_text_about {
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .about_us .inner_text {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Remove any height constraints from your HTML classes */
+  .about_us.inch-14-height,
+  .about_us.height_40 {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* Reduce space between sections */
+  .about_us {
+    margin-bottom: 0 !important;
+  }
+
+  .our_approach {
+    margin-top: 0 !important;
+    padding-top: 2rem !important;
+  }
+
+  /* Responsive adjustments for mobile */
+  @media (max-width: 768px) {
+    .about_us .col-md-6 {
+      padding: 1.5rem !important;
+      max-width: 100% !important;
+      flex: 0 0 100% !important;
+    }
+
+    .about_us img {
+      height: 200px !important;
+    }
+
+    .about_us .header_text_about {
+      font-size: 2rem !important;
+    }
+  }
+
+
+  /* Remove padding and margins from parent containers */
+  .about_us {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  /* Ensure the inner container takes full width with reduced height */
+  .inner_about_cont {
+    margin: 0 !important;
+    padding: 2rem 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  /* Make the row take full width */
+  .about_us .row {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Ensure columns take full width without gaps - reduced padding for thinner section */
+  .about_us .col-md-6 {
+    padding: 2rem !important;
+    margin: 0 !important;
+    max-width: 50% !important;
+    flex: 0 0 50% !important;
+    min-height: auto !important;
+  }
+
+  /* Remove any container constraints that might limit width */
+  .about_us * {
+    box-sizing: border-box !important;
+  }
+
+  /* Alternative approach - if the above doesn't work, use this instead */
+  .about_us.full-width-override {
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    margin-right: calc(50% - 50vw) !important;
+  }
+
+  /* Ensure image takes full width of its container with controlled height */
+  .about_us img {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 300px !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    border-radius: 8px !important;
+  }
+
+  /* Make sure the image column takes full height */
+  .about_us .col-md-6:first-child {
+    display: flex !important;
+    align-items: stretch !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure equal height columns */
+  .about_us .row {
+    display: flex !important;
+    align-items: stretch !important;
+  }
+
+  .about_us .col-md-6 {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Make sure the background extends fully */
+  .about_us .bg-light {
+    background-color: #f8f9fa !important;
+  }
+
+  /* Remove any Bootstrap container constraints */
+  body .container,
+  body .container-fluid {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  /* Additional styles for compact design */
+  .about_us .header_text_about {
+    font-size: 2.5rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.2 !important;
+  }
+
+  .about_us .inner_text {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    margin-top: 1rem !important;
+  }
+
+  /* Remove any height constraints from your HTML classes */
+  .about_us.inch-14-height,
+  .about_us.height_40 {
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* Reduce space between sections */
+  .about_us {
+    margin-bottom: 0 !important;
+  }
+
+  .our_approach {
+    margin-top: 0 !important;
+    padding-top: 2rem !important;
+  }
+
+  /* Responsive adjustments for mobile */
+  @media (max-width: 768px) {
+    .about_us .col-md-6 {
+      padding: 1.5rem !important;
+      max-width: 100% !important;
+      flex: 0 0 100% !important;
+    }
+
+    .about_us img {
+      height: 200px !important;
+    }
+
+    .about_us .header_text_about {
+      font-size: 2rem !important;
+    }
+  }
+
+
+
+
+  /* ===== HERO SECTION MODERN STYLING ===== */
+
+  /* CSS Custom Properties for Hero Section */
+  :root {
+    /* Hero Color Palette */
+    --hero-primary: #40E0D0;
+    --hero-secondary: #00CED1;
+    --hero-accent: #48D1CC;
+    --hero-dark: #1a2332;
+    --hero-darker: #0f1419;
+    --hero-text-light: rgba(255, 255, 255, 0.95);
+    --hero-text-muted: rgba(255, 255, 255, 0.75);
+
+    /* Typography */
+    --hero-font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --hero-font-display: 'Poppins', sans-serif;
+
+    /* Glass Effects */
+    --hero-glass-bg: rgba(255, 255, 255, 0.05);
+    --hero-glass-border: rgba(64, 224, 208, 0.15);
+    --hero-glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Main Hero Container */
+  .hero-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    /* Advanced Background */
+    background:
+      linear-gradient(135deg, var(--hero-darker) 0%, var(--hero-dark) 50%, #1e2a3a 100%),
+      radial-gradient(circle at 20% 50%, rgba(64, 224, 208, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(72, 209, 204, 0.08) 0%, transparent 50%);
+
+    /* Grid Pattern Overlay */
+    background-image:
+      linear-gradient(rgba(64, 224, 208, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(64, 224, 208, 0.1) 1px, transparent 1px);
+    background-size: 60px 60px;
+
+    animation: backgroundShift 20s ease-in-out infinite;
+  }
+
+  @keyframes backgroundShift {
+
+    0%,
+    100% {
+      background-position: 0% 0%, 0% 0%, 0% 0%;
+    }
+
+    50% {
+      background-position: 20px 20px, 0% 0%, 0% 0%;
+    }
+  }
+
+  /* Animated Grid Lines */
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-image:
+      linear-gradient(45deg, transparent 45%, rgba(64, 224, 208, 0.05) 50%, transparent 55%),
+      linear-gradient(-45deg, transparent 45%, rgba(72, 209, 204, 0.03) 50%, transparent 55%);
+    background-size: 120px 120px;
+
+    animation: gridMove 15s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes gridMove {
+    0% {
+      transform: translateX(-120px) translateY(-120px);
+    }
+
+    100% {
+      transform: translateX(0) translateY(0);
+    }
+  }
+
+  /* Floating Geometric Shapes */
+  .hero-section::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    right: 15%;
+    width: 200px;
+    height: 200px;
+
+    background: linear-gradient(45deg, rgba(64, 224, 208, 0.1), rgba(72, 209, 204, 0.05));
+    border: 1px solid rgba(64, 224, 208, 0.2);
+    border-radius: 20px;
+
+    animation: floatShape 8s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  @keyframes floatShape {
+
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+      opacity: 0.3;
+    }
+
+    50% {
+      transform: translateY(-20px) rotate(5deg);
+      opacity: 0.6;
+    }
+  }
+
+  /* Hero Content Container */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    padding: 2rem;
+    animation: heroEntrance 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  @keyframes heroEntrance {
+    from {
+      opacity: 0;
+      transform: translateY(60px) scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* Main Heading */
+  .hero-title {
+    font-family: var(--hero-font-display);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+
+    /* Advanced Text Effects */
+    background: linear-gradient(135deg,
+        var(--hero-primary) 0%,
+        var(--hero-accent) 30%,
+        var(--hero-secondary) 70%,
+        #5DFDCB 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* Glowing Text Shadow */
+    filter: drop-shadow(0 4px 20px rgba(64, 224, 208, 0.4));
+
+    position: relative;
+    animation: titleGlow 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes titleGlow {
+    from {
+      filter: drop-shadow(0 4px 20px rgba(64, 224, 208, 0.4));
+    }
+
+    to {
+      filter: drop-shadow(0 8px 40px rgba(64, 224, 208, 0.6));
+    }
+  }
+
+  /* Subtitle */
+  .hero-subtitle {
+    font-family: var(--hero-font-primary);
+    font-size: clamp(1.25rem, 3vw, 2rem);
+    font-weight: 400;
+    line-height: 1.4;
+    color: var(--hero-text-muted);
+    margin-bottom: 3rem;
+
+    /* Subtle Animation */
+    animation: fadeInUp 0.8s ease-out 0.3s both;
+
+    /* Modern Typography */
+    letter-spacing: 0.025em;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Description Card */
+  .hero-description {
+    font-family: var(--hero-font-primary);
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    line-height: 1.7;
+    color: var(--hero-text-light);
+
+    /* Glass Morphism Card */
+    background: var(--hero-glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border: 1px solid var(--hero-glass-border);
+    border-radius: 24px;
+    padding: 2.5rem;
+
+    box-shadow: var(--hero-glass-shadow);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    animation: fadeInUp 0.8s ease-out 0.5s both;
+  }
+
+  /* Animated Border Effect */
+  .hero-description::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(64, 224, 208, 0.1),
+        transparent);
+
+    animation: borderShimmer 4s infinite;
+  }
+
+  @keyframes borderShimmer {
+    0% {
+      left: -100%;
+    }
+
+    50% {
+      left: -100%;
+    }
+
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Hover Effects */
+  .hero-description:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow:
+      0 20px 60px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(64, 224, 208, 0.3);
+
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(64, 224, 208, 0.25);
+  }
+
+  /* Accent Line Under Title */
+  .hero-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100px;
+    height: 4px;
+
+    background: linear-gradient(90deg, var(--hero-primary), var(--hero-secondary));
+    border-radius: 2px;
+
+    animation: expandFromCenter 1.5s ease-out 0.8s both;
+  }
+
+  @keyframes expandFromCenter {
+    from {
+      width: 0;
+      opacity: 0;
+    }
+
+    to {
+      width: 100px;
+      opacity: 1;
+    }
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-content {
+      padding: 1.5rem;
+    }
+
+    .hero-description {
+      padding: 2rem;
+      border-radius: 20px;
+    }
+
+    .hero-title::after {
+      width: 60px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-content {
+      padding: 1rem;
+    }
+
+    .hero-description {
+      padding: 1.5rem;
+      border-radius: 16px;
+    }
+
+    .hero-subtitle {
+      margin-bottom: 2rem;
+    }
+
+    .hero-title::after {
+      width: 40px;
+      height: 3px;
+    }
+  }
+
+  /* Fade In Up Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Accessibility - Reduce Motion */
+  @media (prefers-reduced-motion: reduce) {
+
+    .hero-section,
+    .hero-section::before,
+    .hero-section::after,
+    .hero-title,
+    .hero-subtitle,
+    .hero-description,
+    .hero-description::before {
+      animation: none !important;
+    }
+
+    .hero-description:hover {
+      transform: none !important;
+    }
+  }
+
+  /* Performance Optimization */
+  .hero-section * {
+    will-change: transform;
+  }
+
+  /* Additional Decorative Elements */
+  .hero-section .floating-element {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, rgba(64, 224, 208, 0.1), rgba(72, 209, 204, 0.05));
+    border: 1px solid rgba(64, 224, 208, 0.2);
+    border-radius: 50%;
+    animation: floatElement 10s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .hero-section .floating-element:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .hero-section .floating-element:nth-child(2) {
+    top: 60%;
+    right: 20%;
+    animation-delay: 2s;
+    animation-duration: 12s;
+  }
+
+  @keyframes floatElement {
+
+    0%,
+    100% {
+      transform: translateY(0) translateX(0) rotate(0deg);
+      opacity: 0.3;
+    }
+
+    25% {
+      transform: translateY(-20px) translateX(10px) rotate(90deg);
+      opacity: 0.6;
+    }
+
+    50% {
+      transform: translateY(-10px) translateX(-10px) rotate(180deg);
+      opacity: 0.4;
+    }
+
+    75% {
+      transform: translateY(10px) translateX(5px) rotate(270deg);
+      opacity: 0.5;
+    }
+  }
+  
+  
 </style>
 
 <!-- Social Media Icons Container -->
-
-
-
 <!-- header section -->
 <div class="header_section height_90 width_100">
   <!-- navbar -->
@@ -244,6 +871,8 @@
     </div>
   </div>
 </div>
+
+
 <!-- ! header section -->
 
 <!-- about us section -->
@@ -253,7 +882,7 @@
       <div class="col-md-6 p-5 bg-light">
         <img src="assets/Rectangle 56.png" class="width_100" alt="" />
       </div>
-      <div class="col-md-6 bg-light p-5">
+      <div class="col-md-5 bg-light p-5">
         <div class="header_text_about">
           Who we are<span class="transparent_about"></span>
         </div>
