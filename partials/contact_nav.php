@@ -4,7 +4,7 @@
       <ul class="d-flex justify-content-evenly pt-3  ">
         <li><a href="../index.php">Home</a></li>
         <li><a href="about_us.php">About Us</a></li>
-        <li><a href="../index.php#our_products">Products</a></li>
+        <li><a href="products.php">Products</a></li>
         <li class="dropdown">
           <a href="#" class="main_nav_li" onclick="openSolutions()">Solutions</a>
           <div class="dropdown-content py-3 px-2">

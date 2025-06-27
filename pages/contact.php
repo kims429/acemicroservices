@@ -41,13 +41,13 @@
                 <div class="form-group-half">
                   <div class="form-floating">
                     <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                    <label for="name">Full Name <span class="required-asterisk">*</span></label>
+                    <label for="name">Full Name <span class="required-asterisk"></span></label>
                   </div>
                 </div>
                 <div class="form-group-half">
                   <div class="form-floating">
                     <input type="email" name="email" class="form-control" id="email" placeholder="your@email.com" required>
-                    <label for="email">Email Address <span class="required-asterisk">*</span></label>
+                    <label for="email">Email Address <span class="required-asterisk"></span></label>
                   </div>
                 </div>
               </div>
@@ -62,7 +62,7 @@
               <div class="form-group-full">
                 <div class="form-floating">
                   <textarea name="message" class="form-control" id="message" placeholder="Your message here..." style="height: 150px;" required></textarea>
-                  <label for="message">Message <span class="required-asterisk">*</span></label>
+                  <label for="message">Message <span class="required-asterisk"></span></label>
                 </div>
               </div>
 

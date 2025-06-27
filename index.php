@@ -834,7 +834,7 @@
   <?php include_once "partials/nav.php" ?>
   <div class="content width_70 pt-5">
     <div class="header_text main_color inch-14-head-text">
-      Achieve your<span class="transparent inch-14-head-text"> goals</span>
+      Achieve your <span class="transparent inch-14-head-text">goals</span>
     </div>
     <div class="h4 text-light pb-5 inch-14-margin">
       with our reliable and scalable end-to-end IT solutions
